@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
     actions: {
+        
         deleteLength()
         {
             // Get the id
@@ -15,7 +16,7 @@ export default Ember.Component.extend({
         {
             // Get the id
             let id = this.length.id;
-
+       
             // Create a data object containing the length's id and unit
             let data = {
                 id: id,

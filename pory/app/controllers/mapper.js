@@ -1,7 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+
     actions: {
+
         createLength(data)
         {
             // Create the length
@@ -21,12 +23,13 @@ export default Ember.Controller.extend({
 
         deleteLength(id)
         {
-            // Find the length
+            
+           // Find the length
             this.store.findRecord('length', id).then(function(length)
             {
                 // Destroy the record
                 length.destroyRecord();
-            });
+            });         
         },
 
         editLengthUnit(data)

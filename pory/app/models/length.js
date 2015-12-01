@@ -15,6 +15,7 @@ export default DS.Model.extend({
 
     unitLength: Ember.computed('mm', 'unit', function()
     {
+
         // Get the unit
         let unit = this.get('unit');
 

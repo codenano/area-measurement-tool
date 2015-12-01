@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
     actions: {
+       
         startOver()
         {
             // Pass it on to the parent
@@ -24,6 +25,19 @@ export default Ember.Component.extend({
         {
             // Pass the data up to the controller
             this.get('editLengthUnit')(data);
-        }
+        },
+
+        measurementLengthCheckSelection()
+        {
+            // Pass it on to the parent
+            this.get('measurementLengthCheckSelection')();
+        },
+        
+        measurementPolygonCheckSelection()
+        {
+            // Pass it on to the parent
+            this.get('measurementPolygonCheckSelection')();
+        },
+
     }
 });

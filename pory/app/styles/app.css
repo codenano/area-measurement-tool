@@ -16,6 +16,10 @@ select.form-control {
     background: #FFFFFF;
 }
 
+canvas{
+    border:solid 1px #373A3C;    
+}
+
 /***********************************
  * Mapper Styles
  *

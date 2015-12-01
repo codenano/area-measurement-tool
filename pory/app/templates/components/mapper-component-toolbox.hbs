@@ -16,8 +16,24 @@
             </p>
 
             <p>
-                You may now take measurements and the length of them will be calculated for you.
+                You may now take measurements (Length or Area) and the length of them will be calculated for you.
             </p>
+
+            <hr>
+
+            <p>
+                <span class="fa fa-exclamation-circle"></span> Select Type Of Measurement:
+            </p>
+                
+            <label class="btn btn-default">
+                Length <input id="lengthCheck" type="checkbox" checked="true" onchange={{action "measurementLengthCheckSelection"}} />
+
+            </label> 
+                
+            <label class="btn btn-default">
+                Measuring Area <input id="measuramentCheck" type="checkbox" onchange={{action "measurementPolygonCheckSelection"}} />
+            </label> 
+                
         </div>
     </div>
 {{else}}
