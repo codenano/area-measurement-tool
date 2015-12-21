@@ -24,51 +24,23 @@ export default DS.Model.extend({
         // Create the variable to hold the unit length
         let unitLength = null;
 
-        // Get the length of the set unit
-        switch (unit) {
-            case 'mm':
+        let measurementUnit = [
+                {'unit':'mm', 'value':1},
+                {'unit':'cm', 'value':10},
+                {'unit':'in', 'value':25.4},
+                {'unit':'ft', 'value':304.8},
+                {'unit':'yd', 'value':914.4},
+                {'unit':'m',  'value':1000},
+            ];
 
-                // Get the amount of millimetres in the measurement
-                unitLength = mm;
-
-                break;
-
-            case 'cm':
-
-                // Get the amount of centimetres in the measurement
-                unitLength = mm / 10;
-
-                break;
-
-            case 'in':
-
-                // Get the amount of inches in the measurement
-                unitLength = mm / 25.4;
-
-                break;
-
-            case 'ft':
-
-                // Get the amount of foot in the measurement
-                unitLength = mm / 304.8;
-
-                break;
-
-            case 'yd':
-
-                // Get the amount of yards in the measurement
-                unitLength = mm / 914.4;
-
-                break;
-
-            case 'm':
-
-                // Get the amount of metres in the measurement
-                unitLength = mm / 1000;
-
-                break;
-        }
+        // Get the amount of millimetres in the measurement
+        measurementUnit.forEach(function(measurement){
+            if (unit === measurement.unit){
+                unitLength = mm * measurement.value;
+            }
+        });
 
         return unitLength;
+
     })
 });
