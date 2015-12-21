@@ -314,13 +314,13 @@ export default Ember.Component.extend({
         let measurementPerimeter = this.calculatePerimeterArea(periline);
 
         // Get the last unit
-        let lastAreaUnit = this.get('lastAreaUnit');
-
+        let lastAreaUnit = this.get('lastLengthUnit');
+     
         // Create a data object containing the area's data
         let data = {
             poly:  periline,
             px: measurementPerimeter,
-            s_mm: measurementPerimeter,
+            mm: measurementPerimeter,
             unit: lastAreaUnit
         };
 

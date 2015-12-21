@@ -56,7 +56,7 @@ export default Ember.Controller.extend({
             let perimeter = this.store.createRecord('perimeter', {
                 poly: tmpArray,
                 px: data.px,
-                s_mm: data.s_mm,
+                mm: data.mm,
                 unit: data.unit
              });
 

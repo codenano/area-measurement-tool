@@ -12,29 +12,29 @@ export default DS.Model.extend({
 
     rev: DS.attr('string'),
 
-    unitPerimeter: Ember.computed('s_mm', 'unit', function()
+    unitPerimeter: Ember.computed('mm', 'unit', function()
     {
         // Get the unit
         let unit = this.get('unit');
 
-        // Get the area in s_mm
-        let s_mm = this.get('s_mm');
+        // Get the area in mm
+        let mm = this.get('mm');
 
         // Create the variable to hold the unit area
         let unitPerimeter = null;
 
         let measurementUnit = [
-            {'unit':'s_mm', 'value':1},         // Get the amount of square millimetres in the measurement
-            {'unit':'s_cm', 'value':100.0},     // Get the amount of square centimetres in the measurement
-            {'unit':'s_in', 'value':645.16},    // Get the amount of square inches in the measurement
-            {'unit':'s_ft', 'value':92903.04},  // Get the amount of square feet in the measurement
-            {'unit':'s_yd', 'value':836127.36}, // Get the amount of square yards in the measurement
-            {'unit':'s_m',  'value':1000000.0}, // Get the amount of square metres in the measurement
+            {'unit':'mm', 'value':1},         // Get the amount of square millimetres in the measurement
+            {'unit':'cm', 'value':100.0},     // Get the amount of square centimetres in the measurement
+            {'unit':'in', 'value':645.16},    // Get the amount of square inches in the measurement
+            {'unit':'ft', 'value':92903.04},  // Get the amount of square feet in the measurement
+            {'unit':'yd', 'value':836127.36}, // Get the amount of square yards in the measurement
+            {'unit':'m',  'value':1000000.0}, // Get the amount of square metres in the measurement
         ];
 
         measurementUnit.forEach(function(measurement){
             if (unit === measurement.unit){
-                unitPerimeter = s_mm / measurement.value;
+                unitPerimeter = mm / measurement.value;
             }
         });    
 
